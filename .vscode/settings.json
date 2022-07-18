@@ -1,0 +1,16 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "database": "${workspaceFolder:starter}/prisma/dev.db",
+      "name": "TASK"
+    },
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "TASK",
+      "database": "${workspaceFolder:starter}/prisma/dev.db"
+    }
+  ]
+}

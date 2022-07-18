@@ -1,0 +1,28 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Imports {
+  id         Int       @id @default(autoincrement())
+  importDate DateTime
+  rawContent String
+  Articles   Articles? @relation(fields: [articlesId], references: [id])
+  articlesId Int
+}
+
+model Articles {
+  id              Int       @id @default(autoincrement())
+  externalId      String    @unique
+  importDate      DateTime
+  title           String
+  description     String
+  publicationDate String
+  link            String
+  mainPicture     String
+  imports         Imports[]
+}
